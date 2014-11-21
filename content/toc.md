@@ -1,38 +1,38 @@
-The Twelve Factors
+Двенадцать Факторов
 ==================
 
-## [I. Codebase](/codebase)
-### One codebase tracked in revision control, many deploys
+## [I. База исходных кодов](/codebase)
+### Единая база исходных кодов, под управлением системы контроля версия - множество установок
 
-## [II. Dependencies](/dependencies)
-### Explicitly declare and isolate dependencies
+## [II. Зависимости](/dependencies)
+### Явно прописанные и изолированные зависимости
 
-## [III. Config](/config)
-### Store config in the environment
+## [III. Конфигурация](/config)
+### Конфигурация хранится в переменных среды
 
-## [IV. Backing Services](/backing-services)
-### Treat backing services as attached resources
+## [IV. Вспомогательные службы](/backing-services)
+### Работаем со вспомогательными службами как с удаленными ресурсами
 
-## [V. Build, release, run](/build-release-run)
-### Strictly separate build and run stages
+## [V. Сборка, релиз, выполнение](/build-release-run)
+### Явно разделенные стадии сборки и выполнения
 
-## [VI. Processes](/processes)
-### Execute the app as one or more stateless processes
+## [VI. Процессы](/processes)
+### Приложение работает как один или несколько процессов, не хранящих состояние
 
-## [VII. Port binding](/port-binding)
-### Export services via port binding
+## [VII. Биндинг портов](/port-binding)
+### Приложение делает явний биндинг портов для экспорта своих служб
 
-## [VIII. Concurrency](/concurrency)
-### Scale out via the process model
+## [VIII. Параллелизм](/concurrency)
+### Масштабируемся используя процессную модель
 
-## [IX. Disposability](/disposability)
-### Maximize robustness with fast startup and graceful shutdown
+## [IX. Устранимость](/disposability)
+### Максимизируем надежность быстрым запуском и корректным завершением работы
 
-## [X. Dev/prod parity](/dev-prod-parity)
-### Keep development, staging, and production as similar as possible
+## [X. Равенство разработки/промышленной эксплуатации](/dev-prod-parity)
+### Стараемся чтобы режимы разработки, тестовой и промышленной эксплуатации были как можно ближе друг к другу
 
-## [XI. Logs](/logs)
-### Treat logs as event streams
+## [XI. Журналирование](/logs)
+### Рассматыриваем журнал, как поток событий
 
-## [XII. Admin processes](/admin-processes)
-### Run admin/management tasks as one-off processes
+## [XII. Процессы администора](/admin-processes)
+### Запускаем задачи администратор/менеджера как одноразовые процессы
