@@ -1,18 +1,17 @@
-## I. Codebase
-### One codebase tracked in revision control, many deploys
+## I. База исходных кодов
+### Единая база исходных кодов, под управлением системы контроля версия - множество установок
 
-A twelve-factor app is always tracked in a version control system, such as [Git](http://git-scm.com/), [Mercurial](http://mercurial.selenic.com/), or [Subversion](http://subversion.apache.org/).  A copy of the revision tracking database is known as a *code repository*, often shortened to *code repo* or just *repo*.
+Двенадцатифакторное приложение всегда под управлением системы контроля версий, такой как [Git](http://git-scm.com/), [Mercurial](http://mercurial.selenic.com/), или [Subversion](http://subversion.apache.org/).  Копия базы контроля верисий называется *репозиторием кода*, но часто сокращается до просто *репозитория* или *репы*.
 
-A *codebase* is any single repo (in a centralized revision control system like Subversion), or any set of repos who share a root commit (in a decentralized revision control system like Git).
+*База исходных кодов* - это единый репозиторий (в централизованных системах контроля версий, таких как Subversion), или несколько репозиториев от единого корня (в децентрализованных системах контоля верий, таких как Git).
 
-![One codebase maps to many deploys](/images/codebase-deploys.png)
+![Одна база исходных кодов используется для множества установок](/images/codebase-deploys.png)
 
-There is always a one-to-one correlation between the codebase and the app:
+Между базой исходных кодов и приложением связь всегда один-к-одному:
 
-* If there are multiple codebases, it's not an app -- it's a distributed system.  Each component in a distributed system is an app, and each can individually comply with twelve-factor.
-* Multiple apps sharing the same code is a violation of twelve-factor.  The solution here is to factor shared code into libraries which can be included through the [dependency manager](/dependencies).
+* Если у нас несколько баз исходных кодов, это уже не приложение -- а распределенная система. Каждый компонент этой распределенной системы - это приложене, которое можно индивидуально рассматривать на соответствие 12-факторной методологии.
+* Несколько приложений, совместно использующих один и тот-же код - нарушают принципы 12-факторной методологии. Решением здесь будет вынесение общего кода в модули и использование его через [управление зависимостями](/dependencies).
 
-There is only one codebase per app, but there will be many deploys of the app.  A *deploy* is a running instance of the app.  This is typically a production site, and one or more staging sites.  Additionally, every developer has a copy of the app running in their local development environment, each of which also qualifies as a deploy.
+На одно приложение - одна база исходных кодов, но установок (развертываний - deploy) может быть множество. Под *установкой* здесь подразумевается запущеный экземпляр приложения. Обычно есть один сайт, запущеный в промышенную эксплуатацию, и один или более в тестовой эксплуатации. К тому же, у каждый разработчика есть своя копия приложения, запускаемая в их локалных окружениях для разработки, все это мы тоже считаем "установками".
 
-The codebase is the same across all deploys, although different versions may be active in each deploy.  For example, a developer has some commits not yet deployed to staging; staging has some commits not yet deployed to production.  But they all share the same codebase, thus making them identifiable as different deploys of the same app.
-
+Единая база исходных кодов одна и та же для всех установок, не смотря на то, что для каждой установки может использоваться своя версия.  Например, у назработчика могут быть задействованы коммиты, еще не попавшие на тестовый сервер, а в тестовом сервере могут быть активны коммиты не попавшие в промышленную эксплуатацию. Но все они привязаны к единой базе исходных кодов, что позволяет их инентифицировать как различные *установки* одного и того же приложения.
